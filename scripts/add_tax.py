@@ -51,7 +51,10 @@ for row in checkm_file:
 	if (len(arr) > 1):
 		
 		# get taxonomy free of the k__ bit	
-		tax = arr[1].split("__")[1]
+		if (arr[1]=="root"):
+			tax = "root"
+		else:
+			tax = arr[1].split("__")[1]
 
 		# map taxid and tax name
 	        name2taxid = ncbi.get_name_translator([tax])
