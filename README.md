@@ -109,6 +109,7 @@ MAGpy needs to know about the location of various diamond databases, Pfam etc.  
 * Sourmash (tested with 2.0.0a1)
 * PhyloPhlAn (tested with 0.99)
 * pfam_scan.pl (tested on 1.6)
+* Color::Mix
 
 
 ## Requirements
