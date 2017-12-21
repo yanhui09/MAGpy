@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 
-use lib "/exports/cmvm/eddie/eb/groups/watson_grp/software/BioPerl-1.6.924";
 use Bio::SeqIO;
 use File::Basename;
 
