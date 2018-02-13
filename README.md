@@ -110,6 +110,8 @@ MAGpy needs to know about the location of various diamond databases, Pfam etc.  
 * PhyloPhlAn (tested with 0.99)
 * pfam_scan.pl (tested on 1.6)
 * Color::Mix
+* BioPython
+* GraPhlAn
 
 
 ## Requirements
