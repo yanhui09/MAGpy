@@ -1,16 +1,16 @@
-### 10 minute install
+# 10 minute install
 
 (not taking into account downloading and building the databases)
 
 ## Assuming we are in a brand new Ubuntu instance
 
-# 1 Update ubuntu
+### 1 Update ubuntu
 ```sh
 sudo apt-get update
 sudo apt install gcc g++ make
 ```
 
-# 2 install usearch 
+### 2 install usearch 
 
 Make sure you download VERSION 5.2.32!
 
@@ -20,7 +20,7 @@ I can't do anything else to help you here - you need to register and you will be
 
 Make sure the executable is in your PATH
 
-# 3 download and install conda
+### 3 download and install conda
 ```sh
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
@@ -36,7 +36,7 @@ sh Miniconda3-latest-Linux-x86_64.sh
 source $HOME/.bashrc
 ```
 
-# 4 clone this repo
+### 4 clone this repo
 ```sh
 git clone https://github.com/WatsonLab/MAGpy.git
 ```
