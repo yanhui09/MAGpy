@@ -44,6 +44,31 @@ git clone https://github.com/WatsonLab/MAGpy.git
 ### 5 create the main MAGpy environment
 ```sh
 conda env create -f MAGpy/envs/MAGpy-3.5.yaml
+
+# activate it
+source activate MAGpy-3.5
+```
+
+### 6 download data and build indices
+```sh
+# Uniprot - for DEMO we use Swiss-Prot, but in reality
+# you probably want TrEMBL
+wget -q ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz 
+diamond makedb --in uniprot_sprot.fasta.gz -d uniprot_sprot
+
+# Sourmash
+wget -q https://s3-us-west-1.amazonaws.com/spacegraphcats.ucdavis.edu/microbe-genbank-sbt-k31-2017.05.09.tar.gz 
+gunzip < microbe-genbank-sbt-k31-2017.05.09.tar.gz | tar xvf -
+
+
+# Pfam
+wget ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.gz
+wget ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.dat.gz
+wget ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/active_site.dat.gz
+gunzip Pfam-A.hmm.gz Pfam-A.hmm.dat.gz active_site.dat.gz
+hmmpress Pfam-A.hmm
+gzip Pfam-A.hmm Pfam-A.hmm.dat active_site.dat
+
 ```
 
 
