@@ -41,4 +41,9 @@ source $HOME/.bashrc
 git clone https://github.com/WatsonLab/MAGpy.git
 ```
 
+### 5 create the main MAGpy environment
+```sh
+conda env create -f MAGpy/envs/MAGpy-3.5.yaml
+```
+
 
