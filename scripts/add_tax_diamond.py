@@ -31,7 +31,7 @@ titles = ["name",
 		"family",
 		"genus"]
 
-print '\t'.join(map(str,titles))
+print('\t'.join(map(str,titles)))
 
 # iterate over file
 for row in checkm_file:
@@ -45,7 +45,7 @@ for row in checkm_file:
 		tax = arr[4]
 
 		# map taxid and tax name
-	        name2taxid = ncbi.get_name_translator([tax])
+		name2taxid = ncbi.get_name_translator([tax])
 
 		# check we got what we asked for
 		if tax in name2taxid.keys():
@@ -61,12 +61,12 @@ for row in checkm_file:
 
 			# empty variables unless we change them
 			sk = ''
-                	k  = ''
-                	p  = ''
-                	c  = ''
-                	o  = ''
-                	f  = ''
-                	g  = ''
+			k  = ''
+			p  = ''
+			c  = ''
+			o  = ''
+			f  = ''
+			g  = ''
 
 			# iterate up the lineage mapping names
 			# to each of our variables
@@ -95,11 +95,11 @@ for row in checkm_file:
                                         g = names[l]	
 			
 		# print it all out
-		print '\t'.join(map(str,arr)),'\t',
-		print "%s\t%s\t%s\t%s\t%s\t%s\t%s" % (sk,k,p,c,o,f,g)
+		print ('\t'.join(map(str,arr)),'\t',end='')
+		print ("%s\t%s\t%s\t%s\t%s\t%s\t%s" % (sk,k,p,c,o,f,g))
 	else:
-		print '\t'.join(map(str,arr)),'\t',
-		print "%s\t%s\t%s\t%s\t%s\t%s\t%s" % ("","","","","","","")
+		print ('\t'.join(map(str,arr)),'\t',end='')
+		print ("%s\t%s\t%s\t%s\t%s\t%s\t%s" % ("","","","","","",""))
 
 # close file
 checkm_file.close()

@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use Color::Mix;
 use File::Basename;
@@ -31,10 +31,10 @@ sub produce_tree {
 	print OUT $annot;
 	close OUT;
 
-	print "graphlan_annotate.sh --annot ${n}_annot.txt $tree_file $tbase.tree.$n.xml\n";
-	system("graphlan_annotate.sh --annot ${n}_annot.txt $tree_file $tbase.tree.$n.xml");
-	print "graphlan.sh --format png --pad 0.5 --dpi 600 --size 8 $tbase.tree.$n.xml $tbase.tree.$n.png\n";
-	system("graphlan.sh --format png --pad 0.5 --dpi 600 --size 8 $tbase.tree.$n.xml $tbase.tree.$n.png");
+	print "graphlan_annotate.py --annot ${n}_annot.txt $tree_file $tbase.tree.$n.xml\n";
+	system("graphlan_annotate.py --annot ${n}_annot.txt $tree_file $tbase.tree.$n.xml");
+	print "graphlan.py --format png --pad 0.5 --dpi 600 --size 8 $tbase.tree.$n.xml $tbase.tree.$n.png\n";
+	system("graphlan.py --format png --pad 0.5 --dpi 600 --size 8 $tbase.tree.$n.xml $tbase.tree.$n.png");
 }
 
 
