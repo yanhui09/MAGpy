@@ -55,6 +55,7 @@ source activate MAGpy-3.5
 # you probably want TrEMBL
 wget -q ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz 
 diamond makedb --in uniprot_sprot.fasta.gz -d uniprot_sprot
+rm uniprot_sprot.fasta.gz
 
 # Sourmash
 wget -q https://s3-us-west-1.amazonaws.com/spacegraphcats.ucdavis.edu/microbe-genbank-sbt-k31-2017.05.09.tar.gz 
@@ -76,7 +77,32 @@ cd checkm
 wget https://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz
 gunzip < checkm_data_2015_01_16.tar.gz | tar xvf -
 cd ..
-
 ```
+
+### 7 update ete3 database
+```
+python MAGpy/scripts/update_ete3.py
+```
+
+### 8 prep a second env based on python 2.7
+```
+source deactivate
+
+conda env create -f MAGpy/envs/MAGpy-2.7.yaml
+
+# activate it
+source activate MAGpy-2.7
+```
+
+### 9 install phylophlan
+```
+hg clone https://bitbucket.org/nsegata/phylophlan
+```
+
+### 10 edit config.json
+
+
+
+
 
 
