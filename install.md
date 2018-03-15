@@ -68,7 +68,6 @@ wget ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.dat.gz
 wget ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/active_site.dat.gz
 gunzip Pfam-A.hmm.gz Pfam-A.hmm.dat.gz active_site.dat.gz
 hmmpress Pfam-A.hmm
-gzip Pfam-A.hmm Pfam-A.hmm.dat active_site.dat
 
 # checkM
 # set root to /home/ubuntu/checkm/
