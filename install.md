@@ -98,7 +98,61 @@ source activate MAGpy-2.7
 hg clone https://bitbucket.org/nsegata/phylophlan
 ```
 
-### 10 edit config.json
+### 10 set the checkM data root
+
+I have to say this has proven difficult for me, but this manual way appears to work
+
+Run the command:
+
+```sh
+checkm data setRoot
+```
+
+You will see this output - please set this to the checkm folder where we unzipped data above:
+```sh
+It seems that the CheckM data folder has not been set yet or has been removed. Running: 'checkm data setRoot'.
+Where should CheckM store it's data?
+Please specify a location or type 'abort' to stop trying:
+/home/ubuntu/checkm
+```
+
+You will then see this:
+
+```sh
+Path [/home/ubuntu/checkm] exists and you have permission to write to this folder.
+(re) creating manifest file (please be patient).
+
+You can run 'checkm data update' to ensure you have the latest data files.
+
+```
+
+For some reason I then see it **again**.  Just do the same again:
+
+```sh
+*******************************************************************************
+ [CheckM - data] Check for database updates. [setRoot]
+*******************************************************************************
+
+Where should CheckM store it's data?
+Please specify a location or type 'abort' to stop trying:
+/home/ubuntu/checkm
+```
+
+Finally you wll see this:
+
+```sh
+Path [/home/ubuntu/checkm] exists and you have permission to write to this folder.
+(re) creating manifest file (please be patient).
+
+You can run 'checkm data update' to ensure you have the latest data files.
+
+Data location successfully changed to: /home/ubuntu/checkm
+
+```
+
+What should happen now is that when snakemake makes the MAGpy-2.7 env during execution, it will link to this one, which already has the data root set by you :-)
+
+### 11 edit config.json
 
 The file config.json tells MAGpy where everything is.  On this installation on Ubuntu, it should (and does) look like this:
 
