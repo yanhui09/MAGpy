@@ -101,6 +101,16 @@ hg clone https://bitbucket.org/nsegata/phylophlan
 
 ### 10 edit config.json
 
+The file config.json tells MAGpy where everything is.  On this installation on Ubuntu, it should (and does) look like this:
+
+```sh
+{
+    "phylophlan_dir": "/home/ubuntu/phylophlan",
+    "uniprot_sprot": "/home/ubuntu/uniprot_sprot",
+    "sourmash_gbk": "/home/ubuntu/genbank-k31.sbt.json",
+    "pfam_dir": "/home/ubuntu/"
+}
+```
 
 
 
