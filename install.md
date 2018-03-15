@@ -165,6 +165,24 @@ The file config.json tells MAGpy where everything is.  On this installation on U
 }
 ```
 
+### 12 make scripts ececuteable and add them to your PATH
+
+```sh
+chmod 755 MAGpy/scripts/*
+```
+
+Edit $HOME/.bashrc and add the MAGpy scripts dir to your PATH:
+
+```
+export PATH="/home/ubuntu/MAGpy/scripts/:$PATH"
+```
+
+And source it
+
+```sh
+source $HOME/.bashrc
+```
+
 
 
 
