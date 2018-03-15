@@ -1,12 +1,14 @@
 shell.executable("/bin/bash")
 shell.prefix("source $HOME/.bashrc; ")
 
+import os
+
 configfile: "config.json"
 
 IDS, = glob_wildcards("mags/{id}.fa")
 
 rule all:
-	 input: "sourmash_report.csv", "MAGpy.tree.tree.genus.png", "diamond_bin_report_plus.tsv", expand("pfam/{sample}.pfam", sample=IDS), expand("sourmash/{sample}.sm", sample=IDS), expand("diamond_report/bin.{sample}.tsv", sample=IDS), "checkm_plus.txt", "tree/MAGpy/MAGpy.tree.nwk"
+	 input: "sourmash_report.csv", "diamond_bin_report_plus.tsv", expand("pfam/{sample}.pfam", sample=IDS), expand("sourmash/{sample}.sm", sample=IDS), expand("diamond_report/bin.{sample}.tsv", sample=IDS), "checkm_plus.txt", "tree/MAGpy/MAGpy.tree.nwk"
 
 rule checkm:
 	input: "mags"
@@ -88,14 +90,7 @@ rule phylophlan_link:
 	threads: 16
 	conda: "envs/MAGpy-2.7.yaml"
 	params:
-		pdir=config["phylophlan_dir"]
-	shell: "CWD=`pwd`;  mkdir {params.pdir}/input/MAGpy && cp proteins/* {params.pdir}/input/MAGpy/; cd {params.pdir} && ./phylophlan.py -u MAGpy --nproc 16 && mv {params.pdir}/output/MAGpy $CWD/tree && cd $CWD && rm -rf {params.pdir}/input/MAGpy && rm -rf {params.pdir}/data/MAGpy"
-
-rule draw_tree:
-	input: 
-		tree="tree/MAGpy/MAGpy.tree.nwk",
-		chpl="checkm_plus.txt"
-	output: "MAGpy.tree.tree.genus.png"
-	conda: "envs/MAGpy-2.7.yaml"
-	shell: "produce_tree.pl {input.chpl} {input.tree}"
+		pdir=config["phylophlan_dir"],
+		unn=os.getpid()
+	shell: "CWD=`pwd`;  mkdir {params.pdir}/input/{params.unn} && cp proteins/* {params.pdir}/input/{params.unn}/; cd {params.pdir} && ./phylophlan.py -u {params.unn} --nproc {threads} && mv {params.pdir}/output/{params.unn} $CWD/tree && cd $CWD && rm -rf {params.pdir}/input/{params.unn} && rm -rf {params.pdir}/data/{params.unn}"
 
