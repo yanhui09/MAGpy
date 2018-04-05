@@ -26,7 +26,7 @@ rule checkm_plus:
 rule prodigal:
         input: 'mags/{id}.fa'
         output: 'proteins/{id}.faa'
-        shell: 'touch {output} && prodigal -a {output} -q -i {input}'
+        shell: 'prodigal -p meta -a {output} -q -i {input}'
 
 rule diamond:
         input: 'proteins/{id}.faa'
