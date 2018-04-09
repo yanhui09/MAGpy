@@ -5,7 +5,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - snakemake=3.13.3=py35_0
+  - snakemake=4.8.0=py35_0
   - ete3=3.1.1=py35_0
   - hmmer=3.1b2=3
   - pplacer=1.1.alpha17=0
