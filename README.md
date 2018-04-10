@@ -3,9 +3,7 @@ MAGpy is a Snakemake pipeline for annotating metagenome-assembled genomes (MAGs)
 
 ## Citation
 
-```
 Robert Stewart, Marc Auffret, Tim Snelling, Rainer Roehe, Mick Watson (2017) MAGpy: a reproducible pipeline for the downstream analysis of metagenome-assembled genomes (MAGs), bioRxiv doi:[10.1101/233544](https://doi.org/10.1101/233544)
-```
 
 ## How to install
 
