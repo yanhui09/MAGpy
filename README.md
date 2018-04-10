@@ -65,4 +65,15 @@ Here is what MAGpy attempts to do:
 
 Now obviously this is a bit, erm, hacky but as long as permissions are set on the PhyloPhlAn directory correctly, it should work.
 
+## Drawing the tree
+
+The way we have snakemake set up, it is in a Python 3.5 env and GraPhlAn is in a Python 2.7 env.  So we create the tree outside of Snakemake:
+
+```
+source deactivate
+source activate MAGpy-2.7
+
+perl scripts/produce_tree.pl checkm_plus.txt tree/folder/path_to_newick.nwk
+```
+
 
