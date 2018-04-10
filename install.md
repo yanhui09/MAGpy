@@ -165,7 +165,7 @@ The file config.json tells MAGpy where everything is.  On this installation on U
 }
 ```
 
-### 12 make scripts ececuteable and add them to your PATH
+### 12 make scripts executeable and add them to your PATH
 
 ```sh
 chmod 755 MAGpy/scripts/*
