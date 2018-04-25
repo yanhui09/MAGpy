@@ -58,8 +58,8 @@ diamond makedb --in uniprot_sprot.fasta.gz -d uniprot_sprot
 rm uniprot_sprot.fasta.gz
 
 # Sourmash
-wget -q https://s3-us-west-1.amazonaws.com/spacegraphcats.ucdavis.edu/microbe-genbank-sbt-k31-2017.05.09.tar.gz 
-gunzip < microbe-genbank-sbt-k31-2017.05.09.tar.gz | tar xvf -
+wget -q https://s3-us-west-2.amazonaws.com/sourmash-databases/genbank-d2-k31.tar.gz
+gunzip < genbank-d2-k31.tar.gz | tar xvf -
 
 
 # Pfam
