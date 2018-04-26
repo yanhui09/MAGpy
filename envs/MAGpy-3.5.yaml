@@ -13,6 +13,6 @@ dependencies:
   - fasttree=2.1.10=0
   - diamond=0.9.14=1
   - biopython=1.70=np112py35_1
-  - sourmash=2.0.0a5=py35_0
+  - sourmash=2.0.0a6=py35_0
   - pfam_scan=1.6=pl5.22.0_1
 
