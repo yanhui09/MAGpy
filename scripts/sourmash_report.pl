@@ -12,6 +12,7 @@ foreach $c (@csv) {
 		next if (m/^intersect/);
 		print "$base,";
 		print;
+		last;
 	}
 	close IN;
 }
