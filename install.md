@@ -58,7 +58,7 @@ diamond makedb --in uniprot_sprot.fasta.gz -d uniprot_sprot
 rm uniprot_sprot.fasta.gz
 
 # Sourmash
-wget -q https://s3-us-west-2.amazonaws.com/sourmash-databases/genbank-d2-k31.tar.gz
+wget -q https://s3-us-west-2.amazonaws.com/sourmash-databases/2018-03-29/genbank-d2-k31.tar.gz
 gunzip < genbank-d2-k31.tar.gz | tar xvf -
 
 
