@@ -5,14 +5,14 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - snakemake=4.8.0=py35_0
-  - ete3=3.1.1=py35_0
-  - hmmer=3.1b2=3
-  - pplacer=1.1.alpha17=0
-  - prodigal=2.6.3=0
-  - fasttree=2.1.10=0
-  - diamond=0.9.14=1
-  - biopython=1.70=np112py35_1
-  - sourmash=2.0.0a6=py35_0
-  - pfam_scan=1.6=pl5.22.0_1
+  - snakemake=4.8.0
+  - ete3=3.1.1
+  - hmmer=3.1b2
+  - pplacer=1.1.alpha17
+  - prodigal=2.6.3
+  - fasttree=2.1.10
+  - diamond=0.9.14
+  - biopython=1.70
+  - sourmash=2.0.0a9
+  - pfam_scan=1.6
 
