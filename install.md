@@ -21,6 +21,9 @@ I can't do anything else to help you here - you need to register and you will be
 Make sure the executable is in your PATH
 
 ### 3 download and install conda
+
+(note if you already have a working, functioning install of conda, this step may be unnecessary)
+
 ```sh
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
