@@ -189,6 +189,18 @@ And source it
 source $HOME/.bashrc
 ```
 
+### 13 Install Color::Mix
+
+If you want to draw a tree of MAGs using GraPhlAn and our script "produce_tree.pl" then you will need to install Perl module "Color::Mix"
+
+```
+source activate MAGpy-2.7
+
+/usr/bin/env perl -MCPAN -e 'install Color::Mix'
+# answer yes to automatic config
+# answer a to all
+# answer n to XML additional tools
+```
 
 
 
