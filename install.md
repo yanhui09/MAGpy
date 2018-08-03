@@ -34,6 +34,9 @@ sh Miniconda3-latest-Linux-x86_64.sh
 
 # source .bashrc
 source $HOME/.bashrc
+
+# update conda (just because)
+conda update -n base conda
 ```
 
 ### 4 clone this repo
