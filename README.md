@@ -1,5 +1,5 @@
 # MAGpy
-MAGpy is a Snakemake pipeline for annotating metagenome-assembled genomes (MAGs) (pronounced **mag-pie**)
+MAGpy is a Snakemake pipeline for downstream analysis of metagenome-assembled genomes (MAGs) (pronounced **mag-pie**)
 
 ## Citation
 
