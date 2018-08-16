@@ -110,10 +110,10 @@ rule phylophlan_link:
 		cd {params.pdir}
 		./phylophlan.py -u {params.unn} --nproc {threads}
 		mkdir -p $CWD/tree/MAGpy
-		mv {params.pdir}/output/{params.unn}/*.nwk $CWD/tree/MAGpy/MAGpy.tree.nwk
-		mv {params.pdir}/output/{params.unn}/*.xml $CWD/tree/MAGpy/MAGpy.tree.xml
+		mv ./output/{params.unn}/*.nwk $CWD/tree/MAGpy/MAGpy.tree.nwk
+		mv ./output/{params.unn}/*.xml $CWD/tree/MAGpy/MAGpy.tree.xml
 		./phylophlan.py -i {params.unn} --nproc {threads}
-		mv {params.pdir}/output/{params.unn}/*.nwk $CWD/tree/MAGpy/MAGpy.treeoflife.nwk
+		mv ./output/{params.unn}/*.nwk $CWD/tree/MAGpy/MAGpy.treeoflife.nwk
 		cd $CWD
 		rm -rf {params.pdir}/input/{params.unn}
 		rm -rf {params.pdir}/data/{params.unn}
