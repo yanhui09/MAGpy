@@ -112,7 +112,7 @@ rule phylophlan_link:
 		mkdir -p $CWD/tree/MAGpy
 		mv ./output/{params.unn}/*.nwk $CWD/tree/MAGpy/MAGpy.tree.nwk
 		mv ./output/{params.unn}/*.xml $CWD/tree/MAGpy/MAGpy.tree.xml
-		./phylophlan.py -i {params.unn} --nproc {threads}
+		./phylophlan.py -i -t {params.unn} --nproc {threads}
 		mv ./output/{params.unn}/*.nwk $CWD/tree/MAGpy/MAGpy.treeoflife.nwk
 		cd $CWD
 		rm -rf {params.pdir}/input/{params.unn}
