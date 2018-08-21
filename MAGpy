@@ -114,6 +114,7 @@ rule phylophlan_link:
 		mv ./output/{params.unn}/*.xml $CWD/tree/MAGpy/MAGpy.tree.xml
 		./phylophlan.py -i -t {params.unn} --nproc {threads}
 		mv ./output/{params.unn}/*.nwk $CWD/tree/MAGpy/MAGpy.treeoflife.nwk
+		mv ./output/{params.unn}/*.txt $CWD/tree/MAGpy/
 		cd $CWD
 		rm -rf {params.pdir}/input/{params.unn}
 		rm -rf {params.pdir}/data/{params.unn}
