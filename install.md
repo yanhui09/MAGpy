@@ -77,8 +77,8 @@ hmmpress Pfam-A.hmm
 
 # checkM
 # set root to /home/ubuntu/checkm/
-mkdir checkm
-cd checkm
+mkdir checkm_data
+cd checkm_data
 wget https://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz
 gunzip < checkm_data_2015_01_16.tar.gz | tar xvf -
 cd ..
@@ -119,7 +119,7 @@ You will see this output - please set this to the checkm folder where we unzippe
 It seems that the CheckM data folder has not been set yet or has been removed. Running: 'checkm data setRoot'.
 Where should CheckM store it's data?
 Please specify a location or type 'abort' to stop trying:
-/home/ubuntu/checkm
+/home/ubuntu/checkm_data (use the actual folder you set above)
 ```
 
 You will then see this:
@@ -141,7 +141,7 @@ For some reason I then see it **again**.  Just do the same again:
 
 Where should CheckM store it's data?
 Please specify a location or type 'abort' to stop trying:
-/home/ubuntu/checkm
+/home/ubuntu/checkm_data (use the actual folder you set above)
 ```
 
 Finally you wll see this:
@@ -152,7 +152,7 @@ Path [/home/ubuntu/checkm] exists and you have permission to write to this folde
 
 You can run 'checkm data update' to ensure you have the latest data files.
 
-Data location successfully changed to: /home/ubuntu/checkm
+Data location successfully changed to: /home/ubuntu/checkm_data
 
 ```
 
