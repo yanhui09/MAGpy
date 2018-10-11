@@ -19,7 +19,17 @@ These are:
 * The MAG FASTA files must start with a letter
 * The MAG FASTA files should not have any "." characters in them, other than the final . before the file extension e.f. mag1.faa is fine, mag.1.faa is not
 
+## Reproducibility
+
+For workflows to be reproducible, we recommend that whilst following the ["10 minute install"](https://github.com/WatsonLab/MAGpy/blob/master/install.md) that you name the downloaded databases with the database version and/or the database download date.
+
+if you do this, then the name of the database will be propagated throughout all of the Snakemake outputs and will therefore provide an exact record of what was done, by what software and on which version of the database (software versions are controlled/recorded by the yaml files in the envs directory)
+
+Doing this will ensure reproducibility accross different platforms and groups.
+
 ## How to run
+
+MAGpy is slightly different to other software tools that you may install.  Rathen than installing MAGpy once, in e.g. a global software directory, it is better to clone the repo each time you wish to use it.  Therefore for each project you wish to run MAGpy on, simply clone the repo into that project's folder, and run MAGpy from there.  New project?  Clone the repo again.  The disk footprint of MAGpy is tiny so you lose nothing by doing this (and conda should handle the multiple environments fine).
 
 Clone the repo:
 
@@ -27,6 +37,8 @@ Clone the repo:
 git clone https://github.com/WatsonLab/MAGpy.git
 cd MAGpy
 ```
+
+Edit the config.json and point to the databases and directories created during the ["10 minute install"](https://github.com/WatsonLab/MAGpy/blob/master/install.md)
 
 In this directory, put all of your genomes into the mags folder, one file per genome, with a .fa file extension
 
