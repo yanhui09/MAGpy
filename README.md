@@ -9,6 +9,16 @@ Robert Stewart, Marc Auffret, Tim Snelling, Rainer Roehe, Mick Watson (2017) MAG
 
 Follow the "10 minute install" [here](https://github.com/WatsonLab/MAGpy/blob/master/install.md)
 
+## Clean your MAGs
+
+There are a few things you will need to do before you run MAGpy, and these are due to limitations imposed by the software MAGpy runs, rather than by MAGpy itself.  
+
+These are:
+
+* the names of contigs in your MAGs must be globally unique.  Some assemblers, e.g. Megahit, output very generic contig names e.g. "scaffold_22" which, if you have assembled multiple samples, may be duplicated in your MAGs.  This is not allowed.  BioPython and/or BioPerl can help you rename your contigs
+* The MAG FASTA files must start with a letter
+* The MAG FASTA files should not have any "." characters in them, other than the final . before the file extension e.f. mag1.faa is fine, mag.1.faa is not
+
 ## How to run
 
 Clone the repo:
