@@ -59,6 +59,15 @@ for row in checkm_file:
 		# map taxid and tax names
 		name2taxid = ncbi.get_name_translator([tax])
 
+		# empty variables unless we change them
+		sk = ''
+		k  = ''
+		p  = ''
+		c  = ''
+		o  = ''
+		f  = ''
+		g  = ''
+
 		# check we got what we asked for
 		if tax in name2taxid.keys():
 
@@ -70,15 +79,6 @@ for row in checkm_file:
 			
 			# get all names for that lineage
 			names = ncbi.get_taxid_translator(lineage)
-
-			# empty variables unless we change them
-			sk = ''
-			k  = ''
-			p  = ''
-			c  = ''
-			o  = ''
-			f  = ''
-			g  = ''
 
 			# iterate up the lineage mapping names
 			# to each of our variables
