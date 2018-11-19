@@ -1,7 +1,13 @@
 #!/usr/bin/env perl
 
+use strict;
 use Bio::SeqIO;
 use File::Basename;
+
+unless (@ARGV==3) {
+	print "Incorrect number of arguments\n";
+	exit;
+}
 
 my $tsv = shift;
 my $faa = shift;

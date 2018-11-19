@@ -76,6 +76,7 @@ gunzip Pfam-A.hmm.gz Pfam-A.hmm.dat.gz active_site.dat.gz
 hmmpress Pfam-A.hmm
 
 # checkM
+# set root to /home/ubuntu/checkm/
 mkdir checkm_data
 cd checkm_data
 wget https://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz

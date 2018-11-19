@@ -7,6 +7,11 @@ from ete3 import NCBITaxa
 # get NCBI taxonomu object
 ncbi = NCBITaxa()
 
+if len(sys.argv) == 1:
+	print("Please provide a filename")
+	sys.exit()
+
+
 # open the file
 checkm_file = open(sys.argv[1], mode="r")
 
