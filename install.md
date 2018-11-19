@@ -49,19 +49,19 @@ git clone https://github.com/WatsonLab/MAGpy.git
 
 ### 5 create the main MAGpy environment
 ```sh
-conda env create -f MAGpy/envs/MAGpy-3.5.yaml
+conda env create -f MAGpy/envs/install.yaml
 
 # activate it
-source activate MAGpy-3.5
+source activate magpy_install
 ```
 
 ### 6 download data and build indices
 ```sh
-# Uniprot - for DEMO we use Swiss-Prot, but in reality
-# you probably want TrEMBL
-wget -q ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz 
-diamond makedb --in uniprot_sprot.fasta.gz -d uniprot_sprot
-rm uniprot_sprot.fasta.gz
+# Uniprot - TREMBL
+# NOTE - may require a large amount of RAM
+wget -q ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_trembl.fasta.gz 
+diamond makedb --in uniprot_trembl.fasta.gz -d uniprot_trembl
+rm uniprot_trembl.fasta.gz
 
 # Sourmash
 wget -q https://s3-us-west-2.amazonaws.com/sourmash-databases/2018-03-29/genbank-d2-k31.tar.gz
@@ -75,8 +75,7 @@ wget ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/active_site.dat.gz
 gunzip Pfam-A.hmm.gz Pfam-A.hmm.dat.gz active_site.dat.gz
 hmmpress Pfam-A.hmm
 
-# checkM
-# set root to /home/ubuntu/checkm/
+# get checkM data
 mkdir checkm_data
 cd checkm_data
 wget https://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz
@@ -89,112 +88,39 @@ cd ..
 python MAGpy/scripts/update_ete3.py
 ```
 
-### 8 prep a second env based on python 2.7
-```
-source deactivate
-
-conda env create -f MAGpy/envs/MAGpy-2.7.yaml
-
-# activate it
-source activate MAGpy-2.7
-```
-
-### 9 install phylophlan
+### 8 install phylophlan
 ```
 hg clone https://bitbucket.org/nsegata/phylophlan
 ```
 
-### 10 set the checkM data root
-
-I have to say this has proven difficult for me, but this manual way appears to work
-
-Run the command:
-
-```sh
-checkm data setRoot
-```
-
-You will see this output - please set this to the checkm folder where we unzipped data above:
-```sh
-It seems that the CheckM data folder has not been set yet or has been removed. Running: 'checkm data setRoot'.
-Where should CheckM store it's data?
-Please specify a location or type 'abort' to stop trying:
-/home/ubuntu/checkm_data (use the actual folder you set above)
-```
-
-You will then see this:
-
-```sh
-Path [/home/ubuntu/checkm] exists and you have permission to write to this folder.
-(re) creating manifest file (please be patient).
-
-You can run 'checkm data update' to ensure you have the latest data files.
-
-```
-
-For some reason I then see it **again**.  Just do the same again:
-
-```sh
-*******************************************************************************
- [CheckM - data] Check for database updates. [setRoot]
-*******************************************************************************
-
-Where should CheckM store it's data?
-Please specify a location or type 'abort' to stop trying:
-/home/ubuntu/checkm_data (use the actual folder you set above)
-```
-
-Finally you wll see this:
-
-```sh
-Path [/home/ubuntu/checkm] exists and you have permission to write to this folder.
-(re) creating manifest file (please be patient).
-
-You can run 'checkm data update' to ensure you have the latest data files.
-
-Data location successfully changed to: /home/ubuntu/checkm_data
-
-```
-
-What should happen now is that when snakemake makes the MAGpy-2.7 env during execution, it will link to this one, which already has the data root set by you :-)
-
-### 11 edit config.json
+### 9 edit config.json
 
 The file config.json tells MAGpy where everything is.  On this installation on Ubuntu, it should (and does) look like this:
 
 ```sh
 {
-    "phylophlan_dir": "/home/ubuntu/phylophlan",
-    "uniprot_sprot": "/home/ubuntu/uniprot_sprot",
+    "phylophlan_dir": "./phylophlan",
+    "uniprot_sprot": "/home/ubuntu/uniprot_trembl",
     "sourmash_gbk": "/home/ubuntu/genbank-k31.sbt.json",
-    "pfam_dir": "/home/ubuntu/"
+    "pfam_dir": "/home/ubuntu/",
+    "checkm_dataroot": "./checkm_data"
 }
 ```
 
-### 12 make scripts executeable and add them to your PATH
+### 10 make scripts executeable
 
 ```sh
 chmod 755 MAGpy/scripts/*
+chmod 755 MAGpy/test/scripts/*
 ```
 
-Edit $HOME/.bashrc and add the MAGpy scripts dir to your PATH:
-
-```
-export PATH="/home/ubuntu/MAGpy/scripts/:$PATH"
-```
-
-And source it
-
-```sh
-source $HOME/.bashrc
-```
-
-### 13 Install Color::Mix
+### 11 Install Color::Mix
 
 If you want to draw a tree of MAGs using GraPhlAn and our script "produce_tree.pl" then you will need to install Perl module "Color::Mix"
 
 ```
-source activate MAGpy-2.7
+conda env create -f MAGpy/envs/basic2.yaml
+source activate basic2
 
 /usr/bin/env perl -MCPAN -e 'install Color::Mix'
 # answer yes to automatic config
