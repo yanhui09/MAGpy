@@ -111,8 +111,8 @@ Now obviously this is a bit, erm, hacky but as long as permissions are set on th
 The way we have snakemake set up, it is in a Python 3.5 env and GraPhlAn is in a Python 2.7 env.  So we create the tree outside of Snakemake:
 
 ```
-source deactivate
-source activate MAGpy-2.7
+conda env create -f envs/basic2.yaml
+source activate basic2
 
 perl scripts/produce_tree.pl checkm_plus.txt tree/folder/path_to_newick.nwk
 ```
