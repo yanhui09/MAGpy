@@ -3,7 +3,7 @@ MAGpy is a Snakemake pipeline for downstream analysis of metagenome-assembled ge
 
 ## Citation
 
-Robert Stewart, Marc Auffret, Tim Snelling, Rainer Roehe, Mick Watson (2017) MAGpy: a reproducible pipeline for the downstream analysis of metagenome-assembled genomes (MAGs), bioRxiv doi:[10.1101/233544](https://doi.org/10.1101/233544)
+Robert Stewart, Marc Auffret, Tim Snelling, Rainer Roehe, Mick Watson (2018) MAGpy: a reproducible pipeline for the downstream analysis of metagenome-assembled genomes (MAGs). Bioinformatics bty905, [bty905](https://doi.org/10.1093/bioinformatics/bty905)
 
 ## How to install
 
@@ -26,6 +26,25 @@ For workflows to be reproducible, we recommend that whilst following the ["10 mi
 if you do this, then the name of the database will be propagated throughout all of the Snakemake outputs and will therefore provide an exact record of what was done, by what software and on which version of the database (software versions are controlled/recorded by the yaml files in the envs directory)
 
 Doing this will ensure reproducibility accross different platforms and groups.
+
+## Run the tests!
+
+It's always a good idea to run the tests and this has the added advantage of installing all of the conda environments.
+
+Clone the repo:
+
+```sh
+git clone https://github.com/WatsonLab/MAGpy.git
+cd MAGpy
+```
+
+Run the tests:
+
+```sh
+snakemake --use-conda -s MAGpy test
+```
+
+Test outputs will be in ```test/outputs``` and you should have an ```error_log``` file in your current working directory.
 
 ## How to run
 
