@@ -8,4 +8,4 @@ dependencies:
   - python=2.7
   - hmmer=3.1b2
   - pplacer=1.1.alpha17
-
+  - prodigal=2.6.3
