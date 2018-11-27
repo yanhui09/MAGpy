@@ -90,7 +90,7 @@ rule sourmash_gather:
 rule sourmash_report:
 	input: expand("sourmash/{sample}.csv", sample=IDS)
 	output: 'sourmash_report.csv'
-	shell: "echo 'sample,intersect_bp,f_orig_query,f_match,f_unique_to_query,name,filename,md5' >> {output} && scripts/sourmash_report.pl {input} >> {output}"
+	shell: "echo 'intersect_bp,f_orig_query,f_match,f_unique_to_query,f_unique_weighted,average_abund,median_abund,std_abund,name,filename,md5' >> {output} && scripts/sourmash_report.pl {input} >> {output}"
 
 rule pfam_scan:
 	input: 'proteins/{id}.faa'
