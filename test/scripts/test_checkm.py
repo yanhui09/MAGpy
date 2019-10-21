@@ -7,7 +7,7 @@ import os
 import errno
 
 if len(sys.argv) == 1:
-	print("Please provide a filename")
+	print "Please provide a filename"
 	sys.exit()
 
 # output file
