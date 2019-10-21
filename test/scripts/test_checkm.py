@@ -45,7 +45,6 @@ if error == '':
 	f.write('CheckM ran without problems' + '\n')
 else :
 	f.write('CheckM ran with some errors: ' + error + '\n')
-	
 
 f.close()
 
