@@ -1,5 +1,8 @@
 shell.executable("/bin/bash")
 
+from snakemake.utils import min_version
+min_version("5.0")
+
 import os
 
 configfile: "config.json"
