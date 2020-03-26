@@ -184,10 +184,11 @@ rule test_checkm:
 	output: "test/outputs/checkm.txt"
 	conda: "envs/checkm.yaml"
 	params:
-		checkmdata=config["checkm_dataroot"
+		cdr=config["checkm_dataroot"]
 	shell:
 		'''
-        checkm data setRoot {params.checkmdata}
+		checkm_db={params.cdr}
+		echo ${{checkm_db}} | checkm data setRoot ${{checkm_db}}
 		test/scripts/test_checkm.py {output}	
 		'''	
 
