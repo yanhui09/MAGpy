@@ -1,8 +1,9 @@
 {
-    "phylophlan_dir": "./phylophlan",
-    "uniprot_sprot": "single_ecoli.dmnd",
-    "sourmash_gbk": "ecolidb.sbt.json",
-    "pfam_dir": "/exports/cmvm/eddie/eb/groups/watson_grp/software/",
-    "checkm_dataroot": "./checkm_data"
+    "phylophlan_dir": "/home/yanhui/Data/depot_tool/magpy/phylophlan",
+    "uniprot_sprot": "/home/yanhui/Data/depot_tool/magpy/uniprot_trembl.dmnd",
+    "sourmash_gbk": "/home/yanhui/Data/depot_tool/magpy/genbank-d2-k31.sbt.json",
+    "pfam_dir": "/home/yanhui/Data/depot_tool/magpy/",
+    "checkm_dataroot": "/home/yanhui/Data/depot_tool/magpy/checkm_data"
 }
+
 
