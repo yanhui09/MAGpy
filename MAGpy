@@ -23,7 +23,7 @@ rule checkm:
 		'''
 		checkm_db={params.cdr}
 		echo ${{checkm_db}} | checkm data setRoot ${{checkm_db}}
-		checkm lineage_wf -f checkm.txt --reduced_tree -t {threads} -x fa {input} ./checkm
+		checkm lineage_wf -f checkm.txt -t {threads} -x fa {input} ./checkm
 		'''
 
 rule checkm_plus:
