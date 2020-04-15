@@ -70,6 +70,7 @@ snakemake --use-conda -s MAGpy --cores $N
 Outputs will be placed into the *current working directory*, so make sure you have write access.
 
 ## !!!! Sometimes you will meet memory block on the checkm if too many threads were called. Try less threads and continue the workflow.
+## snakemake --use-conda -s MAGpy --cores 1  ## checkm need 40GB for at least one thread, I have 60GB thus tune to 1 thread
 
 To test which commands snakemake will run, you can try:
 
