@@ -69,6 +69,8 @@ snakemake --use-conda -s MAGpy --cores $N
 
 Outputs will be placed into the *current working directory*, so make sure you have write access.
 
+####!!!! Sometimes you will meet memory block on the checkm if too many threads were called. Try less threads and re-run.
+
 To test which commands snakemake will run, you can try:
 
 ```sh
